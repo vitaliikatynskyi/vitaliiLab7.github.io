@@ -168,7 +168,7 @@
          <!--Unite_gallery-->
          <h2>Magnific Popup Gallery</h2>
          <!--Magnific Popup Gallery-->
-         <div class="popup-gallery">
+         <div class="popup-gallery"></div>
             <a href="image/nature.jpg" title="nature"><img src="image/nature.jpg" height="100" alt="nature"></a>
             <a href="image/nature2.jpg" title="nature"><img src="image/nature2.jpg" height="100" alt="nature"></a>
             <a href="image/nature3.jpg" title="Pnature"><img src="image/nature3.jpg" height="100" alt="nature"></a>
@@ -260,6 +260,25 @@
                 $( "#datepicker" ).datepicker();
             } );
          </script>  
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+         <script>
+            $(document).ready(function() {
+               $('.popup-gallery').magnificPopup({
+                  delegate: 'a',
+                  type: 'image',
+                  gallery: {
+                     enabled: true
+                  }
+               });
+
+               $(document).keydown(function(e) {
+                  if (e.key === "Enter") {
+                     $.magnificPopup.close();
+                  }
+               });
+            });
+         </script>
       </div>
    </body>
 </html>
